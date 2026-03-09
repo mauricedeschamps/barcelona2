@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="バルセロナ観光ガイド - 12の魅力を紹介">
+  <meta name="theme-color" content="#1a3a5f">
+  <title>Barcelona Travel Guide PWA</title>
+  <!-- マニフェスト（データURI埋め込み） -->
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Barcelona%20Travel%20Guide%22%2C%22short_name%22%3A%22BCN%20Guide%22%2C%22description%22%3A%22%E3%83%90%E3%83%AB%E3%82%BB%E3%83%AD%E3%83%8A%E3%81%AE%E8%A6%B3%E5%85%89%E5%90%8D%E6%89%8012%E9%81%B8%E3%82%92%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8BPWA%E3%82%A2%E3%83%97%E3%83%AA%22%2C%22start_url%22%3A%22index.html%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%231a3a5f%22%2C%22theme_color%22%3A%22%231a3a5f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A%2F%2Fwww.w3.org%2F2000%2Fsvg%2522%2520width%253D%2522192%2522%2520height%253D%2522192%2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25231a3a5f%2522%252F%253E%253Cpath%2520d%253D%2522M156%2520448%2520L206%2520328%2520L256%2520448%2520L306%2520328%2520L356%2520448%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Cpath%2520d%253D%2522M106%2520328%2520L156%2520208%2520L206%2520328%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Cpath%2520d%253D%2522M306%2520328%2520L356%2520208%2520L406%2520328%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522128%2522%2520r%253D%252230%2522%2520fill%253D%2522%2523f8b400%2522%252F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%2C%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A%2F%2Fwww.w3.org%2F2000%2Fsvg%2522%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25231a3a5f%2522%252F%253E%253Cpath%2520d%253D%2522M156%2520448%2520L206%2520328%2520L256%2520448%2520L306%2520328%2520L356%2520448%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Cpath%2520d%253D%2522M106%2520328%2520L156%2520208%2520L206%2520328%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Cpath%2520d%253D%2522M306%2520328%2520L356%2520208%2520L406%2520328%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%2523f8b400%2522%2520stroke-width%253D%2522224%2522%2520stroke-linecap%253D%2522round%2522%2520stroke-linejoin%253D%2522round%2522%252F%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522128%2522%2520r%253D%252230%2522%2520fill%253D%2522%2523f8b400%2522%252F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
+  <!-- Apple Touch Icon（データURI埋め込みSVG） -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%231a3a5f%22%2F%3E%3Cpath%20d%3D%22M156%20448%20L206%20328%20L256%20448%20L306%20328%20L356%20448%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M106%20328%20L156%20208%20L206%20328%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M306%20328%20L356%20208%20L406%20328%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%22128%22%20r%3D%2230%22%20fill%3D%22%23f8b400%22%2F%3E%3C%2Fsvg%3E">
+  <!-- ファビコン（データURI埋め込みSVG） -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%231a3a5f%22%2F%3E%3Cpath%20d%3D%22M156%20448%20L206%20328%20L256%20448%20L306%20328%20L356%20448%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M106%20328%20L156%20208%20L206%20328%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M306%20328%20L356%20208%20L406%20328%22%20fill%3D%22none%22%20stroke%3D%22%23f8b400%22%20stroke-width%3D%2224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%22128%22%20r%3D%2230%22%20fill%3D%22%23f8b400%22%2F%3E%3C%2Fsvg%3E">
+  <style>
+    /* スタイルは完全版（省略せず全記述） */
+    :root {
+      --primary-color: #1a3a5f;
+      --secondary-color: #f8b400;
+      --accent-color: #4e9f3d;
+      --background-color: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --text-secondary: #666666;
+      --header-bg: rgba(26, 58, 95, 0.95);
+      --footer-bg: rgba(26, 58, 95, 0.95);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    .dark-mode {
+      --primary-color: #2c5282;
+      --secondary-color: #ffc107;
+      --accent-color: #68d391;
+      --background-color: #1a202c;
+      --card-bg: #2d3748;
+      --text-color: #e2e8f0;
+      --text-secondary: #a0aec0;
+      --header-bg: rgba(26, 32, 44, 0.95);
+      --footer-bg: rgba(26, 32, 44, 0.95);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: var(--transition);
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+    }
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(90deg, #f8b400, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #f8b400, #ff6b6b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .btn.lang {
+      background: var(--accent-color);
+      color: white;
+    }
+    .btn.dark {
+      background: #4a5568;
+      color: white;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 80px;
+    }
+    .page-title {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 15px;
+      font-size: 2.2rem;
+      color: var(--primary-color);
+    }
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
+    .attractions-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .attraction-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .attraction-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 4px solid var(--secondary-color);
+    }
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+    .card-category {
+      display: inline-block;
+      background: var(--primary-color);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+    .card-description {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      flex-grow: 1;
+      font-size: 0.95rem;
+    }
+    .card-link {
+      align-self: flex-start;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.95rem;
+    }
+    .card-link:hover {
+      background: #3d7e2d;
+      transform: translateY(-2px);
+    }
+    .detail-page {
+      display: none;
+      padding: 20px;
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-bottom: 25px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .back-button:hover {
+      background: #0d2a4d;
+      transform: translateY(-2px);
+    }
+    .detail-container {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .detail-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .detail-content {
+      padding: 30px;
+    }
+    .detail-title {
+      font-size: 2.3rem;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+    .detail-category {
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .detail-text {
+      margin-bottom: 25px;
+      color: var(--text-color);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    .transport-section {
+      background: rgba(78, 159, 61, 0.1);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    .section-title svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+    .transport-info {
+      color: var(--text-color);
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+    .official-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-color);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+    .official-link:hover {
+      background: #3d7e2d;
+      transform: translateY(-2px);
+    }
+    footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--footer-bg);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 1rem;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .contact-link {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      font-size: 1.05rem;
+    }
+    .contact-link:hover {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .attractions-list {
+        grid-template-columns: 1fr;
+      }
+      .logo h1 {
+        font-size: 1.5rem;
+      }
+      .btn {
+        padding: 7px 14px;
+        font-size: 0.95rem;
+      }
+      .detail-image {
+        height: 300px;
+      }
+      .detail-content {
+        padding: 20px;
+      }
+      .detail-title {
+        font-size: 1.9rem;
+      }
+      .page-title {
+        font-size: 1.9rem;
+      }
+      main {
+        padding: 90px 20px 70px;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+      .controls {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .logo {
+        flex-direction: column;
+        gap: 5px;
+      }
+      .btn {
+        font-size: 0.9rem;
+      }
+      .page-title {
+        font-size: 1.7rem;
+      }
+      .detail-title {
+        font-size: 1.7rem;
+      }
+      main {
+        padding: 110px 15px 70px;
+      }
+      .detail-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <header>
+    <div class="logo">
+      <div class="logo-icon">BCN</div>
+      <h1>Barcelona Travel Guide</h1>
+    </div>
+    <div class="controls">
+      <button id="langBtn" class="btn lang">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+        </svg>
+        English
+      </button>
+      <button id="themeBtn" class="btn dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        Light Mode
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div id="mainPage">
+      <h2 class="page-title">Barcelona's Top Attractions</h2>
+      <div class="attractions-list" id="attractionsList"></div>
+    </div>
+    <div id="detailPage" class="detail-page">
+      <button class="back-button" id="backButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Back to List
+      </button>
+      <div class="detail-container">
+        <img id="detailImg" class="detail-image" src="" alt="">
+        <div class="detail-content">
+          <div class="detail-category" id="detailCategory"></div>
+          <h2 class="detail-title" id="detailTitle"></h2>
+          <p class="detail-text" id="detailDescription"></p>
+          <div class="transport-section">
+            <h3 class="section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+              </svg>
+              Transportation
+            </h3>
+            <p class="transport-info"><strong>From Airport:</strong> <span id="airportTransport"></span></p>
+            <p class="transport-info"><strong>Within City:</strong> <span id="cityTransport"></span></p>
+          </div>
+          <a id="officialLink" class="official-link" href="#" target="_blank">
+            Visit Official Website
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact us <br> <a href="mailto:mementomorikatsu@gmail.com" class="contact-link">mementomorikatsu@gmail.com</a></p>
+  </footer>
+
+  <script>
+    // 完全な観光名所データ（英語・スペイン語）
+    const attractionsData = {
+      en: [
+        {
+          id: "sagrada-familia",
+          name: "Sagrada Família",
+          category: "Gaudí's Masterpiece",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8icHwUGJdkp-mkt37BD1vzPLHVtLDEH4xjZ9yWPRjzT3MlqCJUgmq9CM&s=10",
+          description: "Antoni Gaudí's unfinished masterpiece, a basilica that combines Gothic and Art Nouveau forms. Its intricate facades and towering spires make it Barcelona's most iconic landmark.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then Metro L2 or L5 to Sagrada Família station",
+          cityTransport: "Metro: L2 and L5, Sagrada Família station. Bus: 19, 33, 34, 50, 51, B20 and B24",
+          officialLink: "https://sagradafamilia.org"
+        },
+        {
+          id: "park-guell",
+          name: "Park Güell",
+          category: "Gaudí's Masterpiece",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOdalgFjVe7Mpr2mPIm0AC6W-0hQgAmyNa--LxrXXYQaAbbrknfjxprgoq&s=10",
+          description: "A magical park with amazing stone structures, stunning mosaics, and fascinating buildings designed by Gaudí. Offers panoramic views of Barcelona.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then Metro L3 to Lesseps or Vallcarca station",
+          cityTransport: "Bus: 24 and 92. Metro: L3, Lesseps or Vallcarca station",
+          officialLink: "https://parkguell.barcelona"
+        },
+        {
+          id: "casa-batllo",
+          name: "Casa Batlló",
+          category: "Gaudí's Masterpiece",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi-iIc634FHv6GQ0CgjHswe0oFeTSrImu4JZdjlr24T9rOthCUYKsVY9Fi&s=10",
+          description: "A remodeled building restored by Antoni Gaudí, known for its skeletal organic quality and colorful mosaic facade. Also called the 'House of Bones'.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then 7-minute walk",
+          cityTransport: "Metro: L2, L3, L4 to Passeig de Gràcia station",
+          officialLink: "https://www.casabatllo.es"
+        },
+        {
+          id: "casa-mila",
+          name: "Casa Milà (La Pedrera)",
+          category: "Gaudí's Masterpiece",
+          image: "https://buffaloah.com/a/virtual/spain/barc/mila/ext/jpgs/2015_2.jpg",
+          description: "Also known as La Pedrera (The Stone Quarry), this was the last private residence designed by Gaudí. Famous for its undulating stone facade and twisting iron balconies.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then 10-minute walk",
+          cityTransport: "Metro: L3 and L5 to Diagonal station",
+          officialLink: "https://www.lapedrera.com"
+        },
+        {
+          id: "camp-nou",
+          name: "Camp Nou Experience",
+          category: "FC Barcelona",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwv_PkKL8UsnLNcMiQn0JPHD4tAEaGaA2_z06QAdoriGVgwc-DOhtO_qiQ&s=10",
+          description: "Home to FC Barcelona since 1957, with a capacity of 99,354, it's the largest stadium in Europe. The tour includes the museum, locker rooms, and pitchside access.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then Metro L3 to Palau Reial or Les Corts station",
+          cityTransport: "Metro: L3 to Palau Reial, Les Corts or Maria Cristina stations",
+          officialLink: "https://www.fcbarcelona.com"
+        },
+        {
+          id: "fcb-museum",
+          name: "FC Barcelona Museum",
+          category: "FC Barcelona",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTohR3L8Nvr3ZgAmRCs2sdDV2jZcThM-1RbSVIkDHslEpruL-Enn7y4Tag&s=10",
+          description: "The most visited museum in Catalonia, showcasing the club's rich history, trophies, memorabilia, and interactive exhibits about legendary players.",
+          airportTransport: "Same as Camp Nou",
+          cityTransport: "Same as Camp Nou",
+          officialLink: "https://www.fcbarcelona.com"
+        },
+        {
+          id: "las-ramblas",
+          name: "Las Ramblas",
+          category: "Downtown Area",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCzsbSdnmpRTwokWBce_0rFP7Qwe62tl8eIEq3QM_1DlRNqWDvlirFFPiW&s=10",
+          description: "Barcelona's most famous street, stretching 1.2km from Plaça de Catalunya to the Christopher Columbus Monument. Always buzzing with street performers, artists, and outdoor cafes.",
+          airportTransport: "Direct Aerobus service to Plaça de Catalunya",
+          cityTransport: "Metro: L3 to Liceu or Drassanes stations",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "gothic-quarter",
+          name: "Gothic Quarter",
+          category: "Downtown Area",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Barcelona_-_Carrer_del_Bisbe.jpg/640px-Barcelona_-_Carrer_del_Bisbe.jpg",
+          description: "The heart of the old city with narrow medieval streets, historic buildings, charming plazas, and the magnificent Barcelona Cathedral dating back to the 13th century.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then walk south",
+          cityTransport: "Metro: L4 to Jaume I station, L3 to Liceu station",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "boqueria-market",
+          name: "La Boqueria Market",
+          category: "Downtown Area",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9CKNMMFxY0VibmNWXn2VLbZy-MzZm_iauw&s",
+          description: "Barcelona's most famous food market with an explosion of colors, aromas, and flavors. Offers fresh produce, seafood, meats, and local specialties since 1840.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then 5-minute walk",
+          cityTransport: "Metro: L3 to Liceu station",
+          officialLink: "https://www.boqueria.barcelona"
+        },
+        {
+          id: "el-rabal",
+          name: "El Raval",
+          category: "Downtown Area",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTN8PaiI172Lpuk3-cuOwWou3gZSRhdG8dO06JkbMBiZEjYNOJ7uvIbUc&s=10",
+          description: "A vibrant, multicultural neighborhood with contemporary art galleries, vintage shops, and diverse dining options. Home to MACBA (Contemporary Art Museum).",
+          airportTransport: "Aerobus to Plaça de Catalunya, then 10-minute walk",
+          cityTransport: "Metro: L1 and L2 to Universitat station, L3 to Liceu station",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "barceloneta",
+          name: "Barceloneta Beach",
+          category: "Seaside Relaxation",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdH5DI9KxusCc_u-EN12eLdVnWqg-692fadosCrycwnhmt1yAwXZpiSQ&s=10",
+          description: "The most famous beach in Barcelona, located just 10 minutes from the city center. Offers golden sand, clear waters, seafood restaurants, and beach bars.",
+          airportTransport: "Aerobus to Plaça de Catalunya, then Metro L4 to Barceloneta station",
+          cityTransport: "Metro: L4 to Barceloneta or Ciutadella Vila Olímpica stations",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "montjuic",
+          name: "Montjuïc Hill & Magic Fountain",
+          category: "Seaside Relaxation",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlf3OcMLfiL0Eb0hHcJt8bQaC9CMeGArDhFWRjiCU3dsvTci5lA3SnTmV6&s=10",
+          description: "A hill overlooking the harbor with gardens, museums, and the Magic Fountain that offers spectacular light and music shows. Also features the National Art Museum.",
+          airportTransport: "Aerobus to Plaça de Espanya, then walk or bus to Montjuïc",
+          cityTransport: "Metro: L1 and L3 to Plaça de Espanya, then funicular or bus",
+          officialLink: "https://www.barcelonaturisme.com"
+        }
+      ],
+      es: [
+        {
+          id: "sagrada-familia",
+          name: "Sagrada Família",
+          category: "Obra maestra de Gaudí",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8icHwUGJdkp-mkt37BD1vzPLHVtLDEH4xjZ9yWPRjzT3MlqCJUgmq9CM&s=10",
+          description: "La obra maestra inacabada de Antoni Gaudí, una basílica que combina formas góticas y modernistas. Sus intrincadas fachadas y torres la convierten en el monumento más icónico de Barcelona.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego metro L2 o L5 a la estación Sagrada Família",
+          cityTransport: "Metro: L2 y L5, estación Sagrada Família. Autobús: 19, 33, 34, 50, 51, B20 y B24",
+          officialLink: "https://sagradafamilia.org"
+        },
+        {
+          id: "park-guell",
+          name: "Park Güell",
+          category: "Obra maestra de Gaudí",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOdalgFjVe7Mpr2mPIm0AC6W-0hQgAmyNa--LxrXXYQaAbbrknfjxprgoq&s=10",
+          description: "Un parque mágico con sorprendentes estructuras de piedra, impresionantes mosaicos y fascinantes edificios diseñados por Gaudí. Ofrece vistas panorámicas de Barcelona.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego metro L3 a la estación Lesseps o Vallcarca",
+          cityTransport: "Autobús: 24 y 92. Metro: L3, estación Lesseps o Vallcarca",
+          officialLink: "https://parkguell.barcelona"
+        },
+        {
+          id: "casa-batllo",
+          name: "Casa Batlló",
+          category: "Obra maestra de Gaudí",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi-iIc634FHv6GQ0CgjHswe0oFeTSrImu4JZdjlr24T9rOthCUYKsVY9Fi&s=10",
+          description: "Un edificio remodelado por Antoni Gaudí, conocido por su calidad orgánica esquelética y su colorida fachada de mosaico. También llamada la 'Casa de los Huesos'.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego 7 minutos a pie",
+          cityTransport: "Metro: L2, L3, L4 a la estación Passeig de Gràcia",
+          officialLink: "https://www.casabatllo.es"
+        },
+        {
+          id: "casa-mila",
+          name: "Casa Milà (La Pedrera)",
+          category: "Obra maestra de Gaudí",
+          image: "https://buffaloah.com/a/virtual/spain/barc/mila/ext/jpgs/2015_2.jpg",
+          description: "También conocida como La Pedrera, fue la última residencia privada diseñada por Gaudí. Famosa por su fachada de piedra ondulante y sus balcones de hierro retorcido.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego 10 minutos a pie",
+          cityTransport: "Metro: L3 y L5 a la estación Diagonal",
+          officialLink: "https://www.lapedrera.com"
+        },
+        {
+          id: "camp-nou",
+          name: "Experiencia Camp Nou",
+          category: "FC Barcelona",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwv_PkKL8UsnLNcMiQn0JPHD4tAEaGaA2_z06QAdoriGVgwc-DOhtO_qiQ&s=10",
+          description: "Sede del FC Barcelona desde 1957, con capacidad para 99.354 espectadores, es el estadio más grande de Europa. El recorrido incluye el museo, los vestuarios y el acceso al campo.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego metro L3 a la estación Palau Reial o Les Corts",
+          cityTransport: "Metro: L3 a las estaciones Palau Reial, Les Corts o Maria Cristina",
+          officialLink: "https://www.fcbarcelona.com"
+        },
+        {
+          id: "fcb-museum",
+          name: "Museo del FC Barcelona",
+          category: "FC Barcelona",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTohR3L8Nvr3ZgAmRCs2sdDV2jZcThM-1RbSVIkDHslEpruL-Enn7y4Tag&s=10",
+          description: "El museo más visitado de Cataluña, que muestra la rica historia del club, trofeos, recuerdos y exposiciones interactivas sobre jugadores legendarios.",
+          airportTransport: "Igual que Camp Nou",
+          cityTransport: "Igual que Camp Nou",
+          officialLink: "https://www.fcbarcelona.com"
+        },
+        {
+          id: "las-ramblas",
+          name: "Las Ramblas",
+          category: "Zona Centro",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCzsbSdnmpRTwokWBce_0rFP7Qwe62tl8eIEq3QM_1DlRNqWDvlirFFPiW&s=10",
+          description: "La calle más famosa de Barcelona, que se extiende 1,2 km desde la Plaça de Catalunya hasta el Monumento a Colón. Siempre bulliciosa con artistas callejeros y cafés al aire libre.",
+          airportTransport: "Servicio directo de Aerobús a Plaça de Catalunya",
+          cityTransport: "Metro: L3 a las estaciones Liceu o Drassanes",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "gothic-quarter",
+          name: "Barrio Gótico",
+          category: "Zona Centro",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Barcelona_-_Carrer_del_Bisbe.jpg/640px-Barcelona_-_Carrer_del_Bisbe.jpg",
+          description: "El corazón de la ciudad vieja con calles medievales estrechas, edificios históricos, plazas encantadoras y la magnífica Catedral de Barcelona que data del siglo XIII.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego caminar hacia el sur",
+          cityTransport: "Metro: L4 a la estación Jaume I, L3 a la estación Liceu",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "boqueria-market",
+          name: "Mercado de La Boquería",
+          category: "Zona Centro",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9CKNMMFxY0VibmNWXn2VLbZy-MzZm_iauw&s",
+          description: "El mercado de alimentos más famoso de Barcelona con una explosión de colores, aromas y sabores. Ofrece productos frescos, mariscos, carnes y especialidades locales desde 1840.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego 5 minutos a pie",
+          cityTransport: "Metro: L3 a la estación Liceu",
+          officialLink: "https://www.boqueria.barcelona"
+        },
+        {
+          id: "el-rabal",
+          name: "El Raval",
+          category: "Zona Centro",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTN8PaiI172Lpuk3-cuOwWou3gZSRhdG8dO06JkbMBiZEjYNOJ7uvIbUc&s=10",
+          description: "Un barrio vibrante y multicultural con galerías de arte contemporáneo, tiendas vintage y diversas opciones gastronómicas. Hogar del MACBA (Museo de Arte Contemporáneo).",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego 10 minutos a pie",
+          cityTransport: "Metro: L1 y L2 a la estación Universitat, L3 a la estación Liceu",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "barceloneta",
+          name: "Playa de la Barceloneta",
+          category: "Relajación junto al mar",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdH5DI9KxusCc_u-EN12eLdVnWqg-692fadosCrycwnhmt1yAwXZpiSQ&s=10",
+          description: "La playa más famosa de Barcelona, ubicada a solo 10 minutos del centro de la ciudad. Ofrece arena dorada, aguas claras, restaurantes de mariscos y chiringuitos.",
+          airportTransport: "Aerobús a Plaça de Catalunya, luego metro L4 a la estación Barceloneta",
+          cityTransport: "Metro: L4 a las estaciones Barceloneta o Ciutadella Vila Olímpica",
+          officialLink: "https://www.barcelonaturisme.com"
+        },
+        {
+          id: "montjuic",
+          name: "Montjuïc y Fuente Mágica",
+          category: "Relajación junto al mar",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlf3OcMLfiL0Eb0hHcJt8bQaC9CMeGArDhFWRjiCU3dsvTci5lA3SnTmV6&s=10",
+          description: "Una colina con vistas al puerto con jardines, museos y la Fuente Mágica que ofrece espectaculares shows de luz y música. También cuenta con el Museo Nacional de Arte.",
+          airportTransport: "Aerobús a Plaça d'Espanya, luego caminar o tomar autobús a Montjuïc",
+          cityTransport: "Metro: L1 y L3 a Plaça d'Espanya, luego funicular o autobús",
+          officialLink: "https://www.barcelonaturisme.com"
+        }
+      ]
+    };
+
+    // 初期化
+    let currentLang = 'en';
+    let currentAttraction = null;
+
+    const mainPage = document.getElementById('mainPage');
+    const detailPage = document.getElementById('detailPage');
+    const attractionsList = document.getElementById('attractionsList');
+    const backButton = document.getElementById('backButton');
+    const langButton = document.getElementById('langBtn');
+    const themeButton = document.getElementById('themeBtn');
+    const detailImg = document.getElementById('detailImg');
+    const detailCategory = document.getElementById('detailCategory');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailDescription = document.getElementById('detailDescription');
+    const airportTransport = document.getElementById('airportTransport');
+    const cityTransport = document.getElementById('cityTransport');
+    const officialLink = document.getElementById('officialLink');
+
+    function renderAttractionsList() {
+      attractionsList.innerHTML = '';
+      attractionsData[currentLang].forEach(attraction => {
+        const card = document.createElement('div');
+        card.className = 'attraction-card';
+        card.innerHTML = `
+          <img src="${attraction.image}" alt="${attraction.name}" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">${attraction.name}</h3>
+            <span class="card-category">${attraction.category}</span>
+            <p class="card-description">${attraction.description.substring(0, 100)}...</p>
+            <a href="#" class="card-link" data-id="${attraction.id}">
+              ${currentLang === 'en' ? 'View Details' : 'Ver Detalles'}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </a>
+          </div>
+        `;
+        attractionsList.appendChild(card);
+      });
+      
+      document.querySelectorAll('.card-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = link.getAttribute('data-id');
+          showAttractionDetail(id);
+        });
+      });
+    }
+
+    function showAttractionDetail(id) {
+      const attraction = attractionsData[currentLang].find(a => a.id === id);
+      if (!attraction) return;
+      
+      currentAttraction = attraction;
+      
+      detailImg.src = attraction.image;
+      detailImg.alt = attraction.name;
+      detailCategory.textContent = attraction.category;
+      detailTitle.textContent = attraction.name;
+      detailDescription.textContent = attraction.description;
+      airportTransport.textContent = attraction.airportTransport;
+      cityTransport.textContent = attraction.cityTransport;
+      officialLink.href = attraction.officialLink;
+      
+      mainPage.style.display = 'none';
+      detailPage.style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    function goBackToList() {
+      mainPage.style.display = 'block';
+      detailPage.style.display = 'none';
+      currentAttraction = null;
+      window.scrollTo(0, 0);
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      langButton.innerHTML = currentLang === 'en' ? 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+        </svg>
+        English` : 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+        </svg>
+        Español`;
+      
+      document.querySelector('.page-title').textContent = 
+        currentLang === 'en' ? "Barcelona's Top Attractions" : "Principales Atracciones de Barcelona";
+      
+      backButton.innerHTML = currentLang === 'en' ? 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Back to List` : 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Volver a la lista`;
+      
+      if (currentAttraction) {
+        showAttractionDetail(currentAttraction.id);
+      } else {
+        renderAttractionsList();
+      }
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      themeButton.innerHTML = document.body.classList.contains('dark-mode') ? 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        Light Mode` : 
+        `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        Dark Mode`;
+    }
+
+    backButton.addEventListener('click', goBackToList);
+    langButton.addEventListener('click', toggleLanguage);
+    themeButton.addEventListener('click', toggleTheme);
+
+    // PWA Service Worker の登録（オフライン対応）
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => console.log('ServiceWorker registered'))
+          .catch(error => console.log('ServiceWorker registration failed'));
+      });
+    }
+
+    // 初期表示
+    renderAttractionsList();
+  </script>
+  <!-- サービスワーカーファイル (sw.js) は別途必要ですが、空でも動作します -->
+</body>
+</html>
