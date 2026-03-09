@@ -1,6 +1,6 @@
 {
   "name": "Barcelona Travel Guide",
-  "short_name": "BCN Guide",
+  "short_name": "Barcelona Guide",
   "description": "バルセロナの観光名所12選を紹介するPWAアプリ",
   "start_url": "index.html",
   "display": "standalone",
